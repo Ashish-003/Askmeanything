@@ -53,7 +53,7 @@ const App = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <div style={{ backgroundColor: darkTheme.palette.background.default, minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px', zIndex: 1 , overflow: 'hidden',}}>
-      <img src={'./bg2.png'} alt="Bottom Image" style={{ position: 'absolute', width: '100%', objectFit: 'fill',bottom:0, zIndex: 0 }} /> {/* Add image at the bottom */}
+      <img src={'./bg2.png'} alt="Bottom footer" style={{ position: 'absolute', width: '100%', objectFit: 'fill',bottom:0, zIndex: 0 }} /> {/* Add image at the bottom */}
         <Container maxWidth="md" style={{ zIndex: 1 }}>
           <Typography variant="h1" component="h1" style={{ textAlign: 'center', color: '#ffffff', marginBottom: '20px', zIndex: 5 }}>Why should you hire Ashish? Ask me</Typography>
           <Paper elevation={3} style={{ padding: '30px', borderRadius: '20px', textAlign: 'center', zIndex: 5 }}>
