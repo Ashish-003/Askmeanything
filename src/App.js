@@ -35,7 +35,7 @@ const App = () => {
     setIsSubmitting(true);
     try {
       const requestData = qs.stringify({ query: inputText });
-      const response = await axios.post('http://localhost:8082', requestData, {
+      const response = await axios.post('https://backend-gpt-latest.onrender.com', requestData, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'Accept': 'application/json'
