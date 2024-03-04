@@ -35,7 +35,7 @@ const App = () => {
     setIsSubmitting(true);
     try {
       const requestData = qs.stringify({ query: inputText });
-      const response = await axios.post('https://backend-gpt-latest.onrender.com', requestData, {
+      const response = await axios.post('http://localhost:8082', requestData, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'Accept': 'application/json'
@@ -60,7 +60,7 @@ const App = () => {
           <Paper elevation={3} style={{ padding: '30px', borderRadius: '20px', textAlign: 'center', zIndex: 5 }}>
             <input
               type="text"
-              placeholder="Our Company is a startup working in React"
+              placeholder="Our Company is a startup working in React. Why should we hire you"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               style={{ width: '100%', padding: '10px', marginBottom: '20px', borderRadius: '10px', border: '1px solid #ccc', fontSize: '16px', textAlign: 'center', outline: 'none', fontStyle: 'italic', zIndex: 5 }}
