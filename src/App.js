@@ -106,7 +106,7 @@ const App = () => {
             </button>
             <div style={{ marginTop: '30px', textAlign: 'justify', zIndex: 5 }}>
               {/* {!answer && <p style={}>  List a stack you work with for better answers</p>} */}
-              {answer ? <ReactTyped strings={[answer]} typeSpeed={15}/> : <Typography variant="body1" style={{ color: darkTheme.palette.text.secondary }}>Tip: List a stack you work with for better answers</Typography>}
+              {answer ? <ReactTyped strings={[answer]} typeSpeed={10}/> : <Typography variant="body1" style={{ color: darkTheme.palette.text.secondary }}>Tip: List a stack you work with for better answers</Typography>}
             </div>
           </Paper>
         </Container>
