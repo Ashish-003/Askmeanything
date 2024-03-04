@@ -13,6 +13,7 @@ const darkTheme = createTheme({
     },
     text: {
       primary: '#ffffff',
+      secondary: 'rgba(255, 255, 255, 0.5)', // Define secondary text color for faded effect
     },
   },
   typography: {
@@ -103,8 +104,9 @@ const App = () => {
                 </div>
               )}
             </button>
-            <div style={{ marginTop: '30px', textAlign: 'center', zIndex: 5 }}>
-              {answer && <ReactTyped strings={[answer]} typeSpeed={15} />}
+            <div style={{ marginTop: '30px', textAlign: 'justify', zIndex: 5 }}>
+              {/* {!answer && <p style={}>  List a stack you work with for better answers</p>} */}
+              {answer ? <ReactTyped strings={[answer]} typeSpeed={15}/> : <Typography variant="body1" style={{ color: darkTheme.palette.text.secondary }}>Tip: List a stack you work with for better answers</Typography>}
             </div>
           </Paper>
         </Container>
