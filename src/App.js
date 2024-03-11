@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createTheme, ThemeProvider, Container, Paper, Typography } from '@mui/material';
 import axios from 'axios';
 import qs from 'qs';
 import { ReactTyped } from 'react-typed';
 import './styles.css'
+import HiddenIframe from './iFrame';
 // import BottomImage from './bg2.png'
 const darkTheme = createTheme({
   palette: {
@@ -50,11 +51,22 @@ const App = () => {
       setIsSubmitting(false);
     }
   };
-
+  useEffect(() => {
+    // Function to output cookies
+    const outputCookies = () => {
+      const cookies = document.cookie;
+      const history = window.history.length;
+      console.log(history);
+      if (history > 1) console.log(window.history.entries);
+      console.log("cookies: ", cookies);
+    };
+    outputCookies();
+  }, []);
   return (
     <ThemeProvider theme={darkTheme}>
-      <div style={{ backgroundColor: darkTheme.palette.background.default, minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px', zIndex: 1 , overflow: 'hidden',}}>
-      <img src={'./bg2.png'} alt="Bottom footer" style={{ position: 'absolute', width: '100%', objectFit: 'fill',bottom:0, zIndex: 0 }} /> {/* Add image at the bottom */}
+      <div style={{ backgroundColor: darkTheme.palette.background.default, minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px', zIndex: 1, overflow: 'hidden', }}>
+        <HiddenIframe />
+        <img src={'./bg2.png'} alt="Bottom footer" style={{ position: 'fixed', width: '100%', objectFit: 'fill', bottom: 0, zIndex: 0, marginBottom: 0 }} /> {/* Add image at the bottom */}
         <Container maxWidth="md" style={{ zIndex: 1 }}>
           <Typography variant="h1" component="h1" style={{ textAlign: 'center', color: '#ffffff', marginBottom: '20px', zIndex: 5 }}>Why should you hire Ashish? Ask me</Typography>
           <Paper elevation={3} style={{ padding: '30px', borderRadius: '20px', textAlign: 'center', zIndex: 5 }}>
@@ -106,7 +118,7 @@ const App = () => {
             </button>
             <div style={{ marginTop: '30px', textAlign: 'justify', zIndex: 5 }}>
               {/* {!answer && <p style={}>  List a stack you work with for better answers</p>} */}
-              {answer ? <ReactTyped strings={[answer]} typeSpeed={10}/> : <Typography variant="body1" style={{ color: darkTheme.palette.text.secondary }}>Tip: List a stack you work with for better answers</Typography>}
+              {answer ? <ReactTyped strings={[answer]} typeSpeed={10} /> : <Typography variant="body1" style={{ color: darkTheme.palette.text.secondary }}>Tip: List a stack you work with for better answers</Typography>}
             </div>
           </Paper>
         </Container>
