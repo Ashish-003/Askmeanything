@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const HiddenIframe = () => {
   useEffect(() => {
     const iframe = document.createElement('iframe');
     iframe.style.display = 'none';
-    iframe.src = 'javascript:void(0);';
+    // iframe.src = 'javascript:void(0);';
     iframe.title = 'hidden-iframe';
     iframe.onload = () => {
     //   window.history.back();
