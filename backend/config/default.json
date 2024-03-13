@@ -1,5 +1,5 @@
 {
     "SECRET_KEY": "80085",
     "Salt": "10",
-    "API_KEY": "AIzaSyDAlQMnN2KnPG3io7f1KfLJQMnFw4SQLHA"
+    "API_KEY": "YOUR_API_KEY"
 }
